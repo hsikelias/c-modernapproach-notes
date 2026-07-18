@@ -1,0 +1,52 @@
+# ==========================================
+# Visual Studio Build Outputs & Artifacts
+# ==========================================
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# C/C++ Compiled object files and libraries
+*.obj
+*.o
+*.lib
+*.a
+*.la
+*.lo
+
+# Precompiled Header outputs
+*.pch
+
+# Executables and Dynamic Libraries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# ==========================================
+# Visual Studio Cache & Project Metadata
+# ==========================================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ncb
+*.sdf
+*.opensdf
+*.db
+*.opendb
+
+# ==========================================
+# Compiler and Profiler Logs / Diagnostics
+# ==========================================
+*.log
+*.tlog
+*.lastbuildstate
+*.ilk
+*.pdb
+*.idb
+*.iobj
+*.ipdb
