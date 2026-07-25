@@ -1,3 +1,6 @@
-**BOOK**: C: Modern Approach
+# C Programming: A Modern Approach, by K.N King
 
-Some of my early notes are overly detailed, especially chapter 2. After that chapter, I felt so that I'm writing down everything from the book which is slowing down my momentum a lot. So, after that point I tried to maintain notes for revision and writing things that took me long enough to understand/ something I might forget later.
+
+<img src="https://m.media-amazon.com/images/I/71YNXYuwPGL._AC_UF1000,1000_QL80_.jp://m.media-amazon.com/images/I/71YNXYuwPGL._AC_UF1000,1000_QL80_.jpg" alt="Cover of the C Programming: A Modern Approach book by K.N King">
+
+All of my notes, exercise and project solutions from the book, contains only solutionsfor now. Verified my answers before commiting changes, but feel free to let me know ifyou find any issues.
