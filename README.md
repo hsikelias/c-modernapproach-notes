@@ -6,3 +6,5 @@
 
 
 All of my notes, exercise and project solutions from the book, contains only solutionsfor now. Verified my answers before commiting changes, but feel free to let me know ifyou find any issues.
+
+Completing this book on Windows, using GCC `6.3.0`
