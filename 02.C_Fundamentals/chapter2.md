@@ -46,3 +46,26 @@ height = 8; //obviously we need to declare the variable before assigning a value
 WHEN ONE INTEGER IS DIVIDED BY ANOTHER, THE ANSWER IS "TRUNCATED", MEANING THE DIGITALS AFTER THE DECIMAL POINT ARE LOST, EVEN IF WE TURN THE INTS ANSWER TO FLOAT WE GET LETS SAY 5.0000.
 
 The language decides that the output must also be an int 
+
+
+*INTERESTING*
+- when you use a scanf statement, it waits for the user to send an input and when the user presses enter, the program adds a hidden /n new line character, in case of print there is no hidden /n character as such.
+
+- we can define constants through a feature known as "macro definitions". Along with #include, this is considered as a preprocessing directive as well.
+
+```c
+#define INCHES_PER_POUND 166
+```
+
+
+### OPTIONS OF GCC TO FIND ERRORS
+
+1. `-std=c99`: Specifies which version of C the compiler should use to check the program
+
+2. `-ansi`: Turns off features of GCC that aren't standard C and enables a few standard features that are normally disabled.
+
+3. `-pedantic`: Issues all warning required by the C standard. Causes programs that use nonstandard features to be rejected.
+
+4. `-Wall`: Causes the compiler to produce warning messages when it detects possible errors. Used in conjuction with -o for maximum effect.
+
+5. `-W`: Additional warnings beyond what '-Wall' produces.
