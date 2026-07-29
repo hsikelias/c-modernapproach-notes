@@ -1,34 +1,45 @@
 # C Fundamentals
 
-## Compiling and Linking
+## Compilation Pipeline
 
-- **Preprocessing**: The program is first given to a *preprocessor*, which obeys commands that begin with #, which are known as *directives*. 
+1. **Preprocessing**
+    * Handles directives starting with `#`.
+    * Example:
 
-- **Compiling**: The modified program goes to the compiler, which translates the human code to machine instructions(*object code*). 
+    ```c
+    #include <stdio.h>
+    ```
+    * `#include` copies the contents of the header into your program **before** compilation.
+    * `#define` creates **macros** (compile-time text substitution).
 
-- **Linking**: The final step, a linker combines the object code produced by the compiler with additional code needed to yield a complete executable program. This additionalc ode includes library functions like `printf`.
+2. **Compiling**
+    * Converts C source code into **object code** (`.o`).
 
-## General Form of a Simple Program
+3. **Linking**
+    * Combines object code with required libraries to create the executable.
+    * Library functions like `printf()` are linked here.
 
-Commands intended for the preprocessor are called *directives*,
+                                    ---
+
+## Headers
+
+* Headers contain **function declarations**, macros, and other definitions.
+* Include only the headers your program needs.
+* Example:
 
 ```c
-#include <stdio.h>
+    #include <stdio.h>   // printf, scanf
 ```
-This tells the compiler that the information in <stdio.h> to be included before the promgram is compiled.
-C has a lot of **Headers** like <stdio.h>, each with their own purpose.
 
-Functions in C are either implemented by the programmer or are from a library, some functions return a value and some don't.
+      ---
 
-### Variables and Assignment
+## Variables
 
-- Every variable must have a type, this specifies what kind of data C will hold.
-- `int` is one of the data type, storing 1, 392, -234
-- `float` means floating-point, it can store much larger numbers and it can store digits with decimal points. 
+* Every variable **must be declared before use**.
+* A variable's type determines:
 
-### Declarations
-
-- Variables must be declared before they can be used, we do that by first specifying the variable type and then its name.
+* what values it can store.
+* how much memory it uses.
 
 ```c
 int height;
@@ -36,36 +47,70 @@ float profit;
 ```
 
 ### Assignment
-- A variable can be given a value by assignment.
 
 ```c
-height = 8; //obviously we need to declare the variable before assigning a value.
+height = 8;
 ```
 
+---
 
-WHEN ONE INTEGER IS DIVIDED BY ANOTHER, THE ANSWER IS "TRUNCATED", MEANING THE DIGITALS AFTER THE DECIMAL POINT ARE LOST, EVEN IF WE TURN THE INTS ANSWER TO FLOAT WE GET LETS SAY 5.0000.
+## Integer Division (Easy to Forget)
 
-The language decides that the output must also be an int 
+When **both operands are `int`**, C performs **integer division**.
 
+```c
+5 / 2      // 2
+```
 
-*INTERESTING*
-- when you use a scanf statement, it waits for the user to send an input and when the user presses enter, the program adds a hidden /n new line character, in case of print there is no hidden /n character as such.
+The decimal part is discarded (**truncated**) **before** the result is stored.
 
-- we can define constants through a feature known as "macro definitions". Along with #include, this is considered as a preprocessing directive as well.
+Even this gives `2.0`, not `2.5`:
+
+```c
+float x = 5 / 2;   // x = 2.0
+```
+
+At least one operand must be a floating-point type:
+
+```c
+float x = 5.0 / 2;     // 2.5
+float y = (float)5 / 2; // 2.5
+```
+
+---
+
+## `scanf()` Behavior
+
+`scanf()` waits until the user presses **Enter**.
+
+When Enter is pressed, the terminal sends a hidden newline character (`'\n'`) after the input. This is why input functions sometimes appear to "leave behind" a newline.
+
+---
+
+## Macro Definitions
+
+Macros are handled by the **preprocessor**.
 
 ```c
 #define INCHES_PER_POUND 166
 ```
 
+* No `=` and no semicolon.
+* The preprocessor replaces every occurrence of `INCHES_PER_POUND` with `166` before compilation.
 
-### OPTIONS OF GCC TO FIND ERRORS
+---
 
-1. `-std=c99`: Specifies which version of C the compiler should use to check the program
+## Useful GCC Flags
 
-2. `-ansi`: Turns off features of GCC that aren't standard C and enables a few standard features that are normally disabled.
+```bash
+gcc -std=c99 -Wall -W -pedantic -o program program.c
+```
 
-3. `-pedantic`: Issues all warning required by the C standard. Causes programs that use nonstandard features to be rejected.
+| Flag        | Purpose                                                  |
+| ----------- | -------------------------------------------------------- |
+| `-std=c99`  | Use the C99 standard.                                    |
+| `-Wall`     | Enable the most common warnings (always use).            |
+| `-W`        | Enable additional warnings.                              |
+| `-pedantic` | Warn/error about non-standard C features.                |
+| `-ansi`     | Restrict GCC extensions and use ANSI C (older than C99). |
 
-4. `-Wall`: Causes the compiler to produce warning messages when it detects possible errors. Used in conjuction with -o for maximum effect.
-
-5. `-W`: Additional warnings beyond what '-Wall' produces.
