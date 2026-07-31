@@ -1,15 +1,13 @@
-#include <stdio.h>
+# include <stdio.h>
 
-int main (void)
+int main(void)
 {
-    int i;
-    float x;
+    int num1, denom1, num2, denom2, result_num, result_deom;
 
-    i = 40;
-    x = 839.21f;
-
-    printf("|%d|%-5.3d|%-5d|%5.3d|\n",i,i,i,i);
-    printf("|%10.3f|%10.3e|%-10g|\n",x,x,x);
+    printf("Enter first fraction: ");
+    scanf("%d/%d", &num1, &denom1);
+    
+    printf("%d,%d",num1, denom1); //num1 = 5, denom1 = 6
 
     return 0;
 }

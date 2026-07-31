@@ -48,13 +48,16 @@ The value that is read from the input won't be stored in the variable; instead, 
 
 
 ```C
-
 // 1-20.3-4.0e3 
 // How would scanf read the above input? 
 
 scanf("%d%d%f%f", &i, &j, &x, &y);
 
+// %d, first is 1 then scanf moves to next character -, this won't appear inside an int.. so scanf stores 1 to i and - back to its place
 
+// %d, reads -,2,0 and . int can't have a decimal point so stores -20 to j
 
+// %f, reads .3,-. Since floating points can't contain a - after a digit, scanf just stores 0.3 into x and puts - back
 
+// %f, reads the characters -,4,.,0,e,3. Since floating point numberts can't contain new line, scanf stores -4.0*10^3 into y
 ```
