@@ -97,10 +97,10 @@ giving 1 to i, it stops after seeing theres a -.. which won't go in an int after
 number
 
 **IMPORTANTT!!**
-What *scanf* does is called pattern matching, if user enters bad input, *scanf*
+What *scanf* does is **called pattern matching**, if user enters bad input, *scanf*
 will reject it and that remaining part will sit in the input buffer. The program
 will not pause to let the user enter a new input on the next *scanf* call. The new *scanf* reads the exact leftover bad input, which causes a error infinite loop.
 
-
-
-
+- programs don't read user in put as it is typed. Instead, input is stored in a 
+  hidden buffer, to which `scanf` has access. This way it is easy for `scanf` to 
+  put characters back into the buffer for subsequent reading.
