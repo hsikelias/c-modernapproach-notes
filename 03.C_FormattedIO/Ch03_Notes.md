@@ -7,13 +7,16 @@
 Conversion characters can have the form `"%m.pX"` or `%-m.pX", where m and p are integer constants and X is a letter. 
     - m & p are optional, if p is omitted the period that seperates m and p are also dropped.
 
-        - "m" specifies the minimum number of characters to print, if the value requires fewer than m characters, the v          alue is right justified, so extra space precede the value.
-        - So `%4d`, 123 will be displayed as _123 (_ is space)
+    - "m" specifies the minimum number of characters to print, if the value requires fewer than m characters, the value is right justified, 
+    so extra space precede the value.
+    
+    - So `%4d`, 123 will be displayed as _123 (_ is space)
 
-        - If the value to be printed needs more than "m", it will automatically expand to the necessary size. So, even
+    - If the value to be printed needs more than "m", it will automatically expand to the necessary size. So, even
           12345 would display as 12345 with %4d
         
-        - Putting a - sign causes left justification, so %-4d would display 123 as 123_
+    - Putting a - sign causes left justification, so %-4d would display 123 as 123_
+
 
 **M adds space, P adds 0s**
 
@@ -30,8 +33,11 @@ Conversion characters can have the form `"%m.pX"` or `%-m.pX", where m and p are
 - `\t` : Horizontal tab - moves the cursor to the next tab stop
 - `\n` : New line - Advances the cursor to the next tab stop
 
+
 ------------
+
 To print " inside of "..", we can use `\"`
+
 ```c
 printf("\"Hello!\"");
 // Output: "Hello!"

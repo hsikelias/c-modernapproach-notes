@@ -2,12 +2,17 @@
 
 int main(void)
 {
-    int num1, denom1, num2, denom2, result_num, result_deom;
-
-    printf("Enter first fraction: ");
-    scanf("%d/%d", &num1, &denom1);
+    int num1, denom1, num2, denom2, result_num, result_denom;
     
-    printf("%d,%d",num1, denom1); //num1 = 5, denom1 = 6
+    printf("Enter first fraction: "); // 5/6
+    scanf("%d/%d", &num1, &denom1);   // num1 = 5, denom1 = 6
 
+    printf("Enter second fraction: ");
+    scanf("%d/%d", &num2, &denom2);
+
+    result_num = num1 * denom2 + num2 * denom1;
+    result_denom = denom1 * denom2;
+
+    printf("The sum is %d/%d\n", result_num, result_denom);
     return 0;
 }
