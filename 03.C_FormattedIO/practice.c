@@ -6,6 +6,7 @@ int input_test(void);
 
 int main(void)
 {
+    printf("\a");
     int num1, denom1, num2, denom2, result_num, result_denom;
     
     printf("Enter first fraction: "); // 5/6
@@ -30,6 +31,9 @@ int main(void)
 
 int input_test(void)
 {
+    printf("\a\a");
+    printf("\a\a");
+    printf("\a\a");
     int num; 
     printf("Enter num value: ");
     scanf("%d", &num);

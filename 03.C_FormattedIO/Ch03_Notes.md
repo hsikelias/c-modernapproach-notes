@@ -28,7 +28,8 @@ are integer constants and X is a letter.
 
 
 **NOTE: M adds determines num of characters, P helps in adding 0s etc if there
-is less characters than the limit**
+is less characters than the limit, so P is just helping in fullfilling the 
+minimum digit requirement**
 
 - d: displays an integer in decimal form, p indicates minimum num of digits to 
 display, extra zeros are added if needed
@@ -104,3 +105,5 @@ will not pause to let the user enter a new input on the next *scanf* call. The n
 - programs don't read user in put as it is typed. Instead, input is stored in a 
   hidden buffer, to which `scanf` has access. This way it is easy for `scanf` to 
   put characters back into the buffer for subsequent reading.
+
+- 
