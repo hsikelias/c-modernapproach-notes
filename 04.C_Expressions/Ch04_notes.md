@@ -25,4 +25,4 @@ Named 'binary' because they require two operands.
 In binary operators, except '%' allow either integer or floating operands, with mixing allowed.
 
 **NOTE:**
-
+.
