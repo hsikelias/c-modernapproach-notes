@@ -36,7 +36,7 @@ C just matches the way that hardware behaves, some CPUs yield -1 when -9 is divi
 ## Order precedence and Associativity 
 
 ### Associative
-An operator is said to be *left associative* if it groups from left to right. Binary arithmetic operatros are all left associative.
+An operator is said to be *left associative* if it groups from left to right. Binary arithmetic operatros areleft associative.
 
 ```C
 i - j - k  // = (i - j) - k
@@ -99,6 +99,38 @@ The assignment operator doesn't allow its left operand to be an `lvalue`.  An `l
 - Remember order precedence, i *= j + k isn't the same as i = i * j + k.
 - i *= j + k expands to i = i * (j + k) and not i =  (i * j) + k
 
+If you type i=+j, instead of i+= j.. it would mean a completely different thing, the expression would be equivalent to i=(+j), and = operator is right associative.
 
 
+## Increment and Decrement Operators
 
+++, `increment` operators and -- `decrement` operators.
+
+These operators can either be used as **prefix** operators or **postfix** operators, prefix being ++i and postfix being i++, and these operators *do* modify the value of it's operand.
+
+`++i` means increment immediately and use that value, whereas i++ means use the old value for now and increment the i later, it is safe to assume the i value is incremented before the next statement is executed.
+
+## Expression Evaluation
+
+**Precedence** | **Name**         |   **Symbol**   | **Associativity**
+    1           increment(postfix)         ++               left
+                decrement(postfix)         -- 
+    
+    2           increment(prefix)         ++               right
+                decrement(prefix)         -- 
+                unary plus                -
+                unary minus               +
+
+    3           multiplicative          % / *               left
+
+    4           additive                  + -               left
+
+    5           assignment         = *= /= %= += -=         right
+
+
+AVOID writing expressions that access the value of a variable and also modify the variable elsewhere in the expression
+example: (b = a + 2) - (a - 1)
+
+AVOID making your expressions depend on a particular order of operation. example: j = i * i++
+
+The behaviors mentioned above are **undefined**, it may lead to crash or worse it compiles and with every different compiler you get a different result.
